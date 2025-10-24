@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Timetable - Vignan University</title>
+<style>
+  body { 
+    font-family: Arial; 
+    text-align:center; 
+    background:#f0f0f0; 
+    padding-top:50px; 
+  }
+  .form-box {
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    display:inline-block;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  input[type=number] {
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin:5px;
+    width:80px;
+  }
+  button {
+    padding:10px 20px; 
+    background:#b22222; 
+    color:white; 
+    border:none; 
+    border-radius:5px; 
+    cursor:pointer; 
+  }
+  button:hover { background:#8a1a1a; }
+</style>
+</head>
+<body>
+
+<div class="form-box">
+  <h2>Generate Timetable</h2>
+  <form action="/generate" method="post">
+    <!-- Hidden fields to pass both uploaded PDFs -->
+    <input type="hidden" name="student_pdf" value="{{ student_pdf }}">
+    <input type="hidden" name="faculty_pdf" value="{{ faculty_pdf }}">
+
+    <label>Enter number of sections:</label>
+    <input type="number" name="num_sections" value="1" min="1" required><br><br>
+
+    <button type="submit">Generate Timetable</button>
+  </form>
+</div>
+
+</body>
+</html>
